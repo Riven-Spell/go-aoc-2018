@@ -10,6 +10,7 @@ var parts = [][]func() string{
 	{days.Day1Part1, days.Day1Part2},
 	{days.Day2Part1, days.Day2Part2},
 	{days.Day3Part1, days.Day3Part2},
+	{days.Day4Part1, days.Day4Part2},
 }
 
 func main() {
