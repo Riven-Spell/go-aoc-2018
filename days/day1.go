@@ -1,7 +1,7 @@
 package days
 
 import (
-	"adventofcode/inputs"
+	"go-aoc-2018/inputs"
 	"strconv"
 	"strings"
 )
@@ -18,7 +18,7 @@ func Day1Part1() string {
 }
 
 type LinkedInt64 struct {
-	next *LinkedInt64
+	next  *LinkedInt64
 	value int64
 }
 
