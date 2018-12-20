@@ -2,7 +2,6 @@ package days
 
 import (
 	"fmt"
-	"go-aoc-2018/inputs"
 	"go-aoc-2018/utils"
 	"sort"
 	"strconv"
@@ -30,9 +29,7 @@ func (p teList) Len() int           { return len(p) }
 func (p teList) Swap(i, j int)      { p[i], p[j] = p[j], p[i] }
 func (p teList) Less(i, j int) bool { return p[i].unixTime < p[j].unixTime }
 
-func Day4Part1() string {
-	input := inputs.Input4
-
+func Day4Part1(input string) string {
 	events := make(teList, 0)
 	loc, _ := time.LoadLocation("UTC")
 
@@ -109,9 +106,7 @@ func Day4Part1() string {
 	return strconv.Itoa(msMinute * msGuardID)
 }
 
-func Day4Part2() string {
-	input := inputs.Input4
-
+func Day4Part2(input string) string {
 	events := make(teList, 0)
 	loc, _ := time.LoadLocation("UTC")
 

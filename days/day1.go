@@ -1,13 +1,11 @@
 package days
 
 import (
-	"go-aoc-2018/inputs"
 	"strconv"
 	"strings"
 )
 
-func Day1Part1() string {
-	input := inputs.Input1
+func Day1Part1(input string) string {
 	var freq int64
 	for _, v := range strings.Split(input, "\n") {
 		change, _ := strconv.ParseInt(v, 10, 64)
@@ -22,13 +20,12 @@ type LinkedInt64 struct {
 	value int64
 }
 
-func Day1Part2() string {
-	input := inputs.Input1
+func Day1Part2(input string) string {
 	var freq int64
 	var seenfreqs = make(map[int64]bool)
 	var first *LinkedInt64
 
-	{
+	{ //god this was a fun solution. Though there's definitely a way faster way to do it. Especially since part 1 takes literally 40 microseconds.
 		var last *LinkedInt64
 
 		for _, v := range strings.Split(input, "\n") {

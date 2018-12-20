@@ -1,13 +1,11 @@
 package days
 
 import (
-	"go-aoc-2018/inputs"
 	"strconv"
 	"strings"
 )
 
-func Day2Part1() string {
-	input := inputs.Input2
+func Day2Part1(input string) string {
 	var twos = 0
 	var threes = 0
 
@@ -41,8 +39,7 @@ func Day2Part1() string {
 	return strconv.Itoa(twos * threes)
 }
 
-func Day2Part2() string {
-	input := inputs.Input2
+func Day2Part2(input string) string {
 	var ids = strings.Split(input, "\n")
 
 	for _, id1 := range ids {
@@ -57,7 +54,7 @@ func Day2Part2() string {
 				}
 			}
 			if nonmatch == 1 {
-				return id1
+				return intersection
 			}
 		}
 	}

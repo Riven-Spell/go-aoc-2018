@@ -2,7 +2,6 @@ package days
 
 import (
 	"fmt"
-	"go-aoc-2018/inputs"
 	"sort"
 	"strconv"
 	"strings"
@@ -50,8 +49,7 @@ func VertOverlap(vpoi ByN) int {
 	return overlap
 }
 
-func Day3Part1() string {
-	input := inputs.Input3
+func Day3Part1(input string) string {
 	claims := make(map[int]claim, 0)
 	horPoI := make(ByN, 0)
 
@@ -63,7 +61,7 @@ func Day3Part1() string {
 		yend := 0
 
 		_, _ = fmt.Sscanf(v, "#%d @ %d,%d: %dx%d", &id, &x, &y, &xend, &yend)
-		claims[id] = claim{id, x, y, xend + x, yend + y}
+		claims[id] = claim{id, x, y, xend + x, yend + y }
 		horPoI = append(horPoI, ByN{{id, x, true}, {id, x + xend, false}}...)
 	}
 
@@ -95,15 +93,13 @@ func Day3Part1() string {
 }
 
 func colliding(a claim, b claim) bool {
-
 	 return !(a.x > b.xend ||
 	 		b.x > a.xend ||
 	 	    a.y > b.yend ||
 	 	    b.y > a.yend)
 }
 
-func Day3Part2() string {
-	input := inputs.Input3
+func Day3Part2(input string) string {
 	claims := make(map[int]claim)
 
 	for _, v := range strings.Split(input, "\n") {
@@ -114,7 +110,7 @@ func Day3Part2() string {
 		yend := 0
 
 		_, _ = fmt.Sscanf(v, "#%d @ %d,%d: %dx%d", &id, &x, &y, &xend, &yend)
-		claims[id] = claim{id, x, y, xend + x, yend + y}
+		claims[id] = claim{id, x, y, xend + x - 1, yend + y - 1}
 	}
 
 	result := 0
