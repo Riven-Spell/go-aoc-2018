@@ -46,7 +46,17 @@ func main() {
 			_, _ = fmt.Sscanf(os.Args[2], "%d_%d", &day, &part)
 			fmt.Println("--------------------------------------------------------------------")
 			fmt.Println("Testing day", day, "part", part)
-
+			for k, in := range tests[day-1][part-1] {
+				fmt.Println("Running test", k + 1)
+				start := time.Now()
+				out := parts[day-1][part-1](in)
+				expect := expected[day-1][part-1][k]
+				if out == expect {
+					fmt.Printf("Succeded test %d. Result: %s, Ran for: %s\n", k+1, out, time.Since(start))
+				} else  {
+					fmt.Printf("FAILED test %d. Result: %s, Expected: %s, Ran for %s\n", k+1, out, expect, time.Since(start))
+				}
+			}
 			fmt.Println("--------------------------------------------------------------------")
 		} else {
 			fmt.Println("--------------------------------------------------------------------")
