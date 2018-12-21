@@ -14,6 +14,7 @@ var parts = [][]func(string) string{
 	{days.Day2Part1, days.Day2Part2},
 	{days.Day3Part1, days.Day3Part2},
 	{days.Day4Part1, days.Day4Part2},
+	{days.Day5Part1, days.Day5Part2},
 }
 
 var dayinput = []string { //Input by day.
@@ -21,6 +22,7 @@ var dayinput = []string { //Input by day.
 	inputs.Input2,
 	inputs.Input3,
 	inputs.Input4,
+	inputs.Input5,
 }
 
 var tests = [][][]string {
@@ -28,6 +30,7 @@ var tests = [][][]string {
 	{testin.Day2Part1Tests, testin.Day2Part2Tests},
 	{testin.Day3Part1Tests, testin.Day3Part1Tests},
 	{testin.Day4Part1Tests, testin.Day4Part1Tests},
+	{testin.Day5Part1Tests, testin.Day5Part1Tests},
 }
 
 var expected = [][][]string { //This should match the structure of tests
@@ -35,6 +38,7 @@ var expected = [][][]string { //This should match the structure of tests
 	{testin.Day2Part1Expects, testin.Day2Part2Expects},
 	{testin.Day3Part1Expects, testin.Day3Part2Expects},
 	{testin.Day4Part1Expects, testin.Day4Part2Expects},
+	{testin.Day5Part1Expects, testin.Day5Part2Expects},
 }
 
 func main() {
